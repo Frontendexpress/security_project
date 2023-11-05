@@ -6,6 +6,7 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
 import db from './DB/db'
+import { system_log_type } from './type/log_type';
 
 const app:Express=express()
 
@@ -23,7 +24,19 @@ app.get('/',async(req:Request,res:Response,next:NextFunction)=>{
 
 app.post('/save_logs',async(req:Request,res:Response,next:NextFunction)=>{
 
-    console.log(req.body)
+    const obj:system_log_type=req.body
+
+    await db.execute(`INSERT INTO logs (system_type,memory_usage,cpu_type,disk_usage,date_time)
+    VALUES ('${obj.system_type}','${obj.memory_usage}','${obj.cpu_type}',${obj.disk_usage},${obj.date_time})`);
+
+    res.status(200).json({message:'status saved'})
+
+})
+
+app.get('/get_logs',async(req:Request,res:Response,next:NextFunction)=>{
+
+    await db.execute(`SELECT * from logs`);
+
     res.status(200).json({message:'status saved'})
 
 })
