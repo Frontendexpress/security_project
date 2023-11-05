@@ -31,7 +31,7 @@ app.get('/', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () 
 app.post('/save_logs', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const obj = req.body;
     yield db_1.default.execute(`INSERT INTO logs (system_type,memory_usage,cpu_type,disk_usage,date_time)
-    VALUES ('${obj.system_type}','${obj.memory_usage}','${obj.cpu_type}',${obj.disk_usage},${obj.date_time})`);
+    VALUES ('${obj.system_type}','${obj.memory_usage}','${obj.cpu_type}','${obj.disk_usage}','${obj.date_time}')`);
     res.status(200).json({ message: 'status saved' });
 }));
 app.get('/get_logs', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {

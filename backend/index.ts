@@ -27,7 +27,7 @@ app.post('/save_logs',async(req:Request,res:Response,next:NextFunction)=>{
     const obj:system_log_type=req.body
 
     await db.execute(`INSERT INTO logs (system_type,memory_usage,cpu_type,disk_usage,date_time)
-    VALUES ('${obj.system_type}','${obj.memory_usage}','${obj.cpu_type}',${obj.disk_usage},${obj.date_time})`);
+    VALUES ('${obj.system_type}','${obj.memory_usage}','${obj.cpu_type}','${obj.disk_usage}','${obj.date_time}')`);
 
     res.status(200).json({message:'status saved'})
 
