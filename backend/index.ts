@@ -10,7 +10,7 @@ import { system_log_type } from './type/log_type';
 
 const app:Express=express()
 
-app.use(cors({credentials:true,origin:'*'}))
+app.use(cors({credentials:true,origin:true}))
 app.use(body_parser.json())
 app.use(body_parser.urlencoded({extended:true}))
 app.use(cookie_parser())
