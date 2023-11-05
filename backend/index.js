@@ -35,7 +35,7 @@ app.post('/save_logs', (req, res, next) => __awaiter(void 0, void 0, void 0, fun
     res.status(200).json({ message: 'status saved' });
 }));
 app.get('/get_logs', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    yield db_1.default.execute(`SELECT * from logs`);
-    res.status(200).json({ message: 'status saved' });
+    let data = yield db_1.default.execute(`SELECT * from logs`);
+    res.status(200).json(data[0]);
 }));
 app.listen(process.env.PORT ? +process.env.PORT : 8000);

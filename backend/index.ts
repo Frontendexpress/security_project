@@ -35,9 +35,9 @@ app.post('/save_logs',async(req:Request,res:Response,next:NextFunction)=>{
 
 app.get('/get_logs',async(req:Request,res:Response,next:NextFunction)=>{
 
-    await db.execute(`SELECT * from logs`);
+    let data:any=await db.execute(`SELECT * from logs`);
 
-    res.status(200).json({message:'status saved'})
+    res.status(200).json(data[0])
 
 })
 
