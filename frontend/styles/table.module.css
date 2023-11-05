@@ -1,0 +1,17 @@
+.custom-table {
+    min-width: 1050px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    border: 1px solid #ededf5;
+    min-width: 40px;
+    height: 40px;
+    padding:0 15px ;
+    text-align: center;
+    font-size: 12px;
+  }
+  

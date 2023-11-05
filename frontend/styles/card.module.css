@@ -1,0 +1,30 @@
+.card {
+    width: fit-content;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 1px 1px 7px rgba(154,154,204,.1);
+    padding: 30px;
+    margin: 20px;
+    background-color: #ffffff;
+    overflow: auto;
+  }
+  .card-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .description{
+    color:#7987a1;
+    word-wrap: break-word;
+  }
+  .title {
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  .line{
+    width: 4px;
+    height: 20px;
+    background-color: var(--primary-color);
+  }
+  
+  

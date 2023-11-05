@@ -1,0 +1,1 @@
+export const URL_API="http://37.32.8.67:5673";
